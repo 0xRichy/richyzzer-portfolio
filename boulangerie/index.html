@@ -1,28 +1,116 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Maison Fournil — Boulangerie artisanale</title><meta name="description" content="Démo de site vitrine pour une boulangerie artisanale : horaires, spécialités, commande et accès.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maison Fournil — Boulangerie au levain</title>
+<meta name="description" content="Boulangerie artisanale au levain : horaires, pains du jour et commande pour le lendemain matin.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23A8481F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fbf6ee;--ink:#2b1d12;--accent:#b5562b;--muted:#7a6656;--card:#fff}
-*{box-sizing:border-box;margin:0}body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,sans-serif}
-.w{max-width:1040px;margin:auto;padding:0 16px}header{padding:20px 0;display:flex;justify-content:space-between;align-items:center}
-.logo{font:700 22px Fraunces,serif}nav a{color:var(--ink);margin-left:18px;text-decoration:none;font-weight:600}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:48px 0}
-h1{font:700 clamp(36px,6vw,64px)/1.05 Fraunces,serif}h1 em{color:var(--accent);font-style:normal}
-.hero p{color:var(--muted);margin:18px 0 26px;font-size:18px}.btn{display:inline-block;background:var(--accent);color:#fff;padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:600}
-.art{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 35%,#e9b77a,#b5562b 60%,#6e2f12);box-shadow:0 30px 60px #b5562b33}
-h2{font:700 34px Fraunces,serif;margin-bottom:24px}section{padding:56px 0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--card);padding:24px;border-radius:18px}
-.card b{display:block;font:700 20px Fraunces,serif}.price{color:var(--accent);font-weight:600}
-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:18px;overflow:hidden}td{padding:14px 20px;border-bottom:1px solid #eee}
-footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid #e6dccd}
-@media(max-width:760px){.hero,.grid{grid-template-columns:1fr}nav{display:none}.art{max-width:260px}}
-</style></head><body>
-<div class="w"><header><span class="logo">Maison Fournil</span><nav><a href="#pains">Nos pains</a><a href="#horaires">Horaires</a><a href="#commande">Commander</a></nav></header>
-<div class="hero"><div><h1>Du pain au levain, <em>cuit chaque matin</em> à 5 h.</h1><p>Farines bio du Gâtinais, fermentation lente de 24 heures, et des viennoiseries au beurre AOP.</p><a class="btn" href="#commande">Réserver ma commande</a></div><div class="art" role="img" aria-label="Illustration d'une miche"></div></div>
-<section id="pains"><h2>Les incontournables</h2><div class="grid">
-<div class="card"><b>Miche de campagne</b><p>Levain naturel, croûte épaisse, se garde 4 jours.</p><span class="price">4,80 € · 800 g</span></div>
-<div class="card"><b>Baguette tradition</b><p>Farine Label Rouge, pointes croustillantes.</p><span class="price">1,30 €</span></div>
-<div class="card"><b>Croissant AOP</b><p>Beurre Charentes-Poitou, 27 couches feuilletées.</p><span class="price">1,40 €</span></div></div></section>
-<section id="horaires"><h2>Horaires</h2><table><tr><td>Mardi – Vendredi</td><td>7 h – 19 h 30</td></tr><tr><td>Samedi</td><td>7 h – 13 h · 15 h – 19 h</td></tr><tr><td>Dimanche</td><td>7 h – 13 h</td></tr><tr><td>Lundi</td><td>Fermé</td></tr></table></section>
-<section id="commande"><h2>Commander pour le lendemain</h2><p>Appelez avant 18 h ou passez en boutique : votre commande vous attend dès l'ouverture.</p><br><a class="btn" href="#">Appeler la boutique</a></section>
-<footer>Démo réalisée par Richyzzer — entreprise fictive, aucun lien avec un commerce réel.</footer></div></body></html>
+:root{--flour:#FAF5EC;--crust:#A8481F;--crust-d:#7E3414;--rye:#3A2618;--muted:#7A6453;--line:#E8DCC8;--card:#FFFDF9;--green:#2F7D4F}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--flour);color:var(--rye);font:17px/1.6 'Work Sans',sans-serif}
+a{color:inherit}:focus-visible{outline:3px solid var(--crust);outline-offset:3px}
+.w{max-width:1080px;margin:auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font:700 24px 'Fraunces',serif;text-decoration:none}
+nav a{margin-left:22px;text-decoration:none;font-weight:500}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:6px 12px;border-radius:999px;background:#fff;border:1px solid var(--line)}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.status.open i{background:var(--green)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:48px 0 72px}
+h1{font:700 clamp(40px,6vw,68px)/1.02 'Fraunces',serif;letter-spacing:-.01em;margin:18px 0}
+.hero p{color:var(--muted);font-size:19px;max-width:30em;margin-bottom:28px}
+.btn{display:inline-block;background:var(--crust);color:#fff;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:600;border:0;font-size:16px;cursor:pointer}
+.btn:hover{background:var(--crust-d)}
+.loaf{width:100%;max-width:420px;justify-self:center}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font:700 38px 'Fraunces',serif;margin-bottom:28px}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.item h3{font:700 22px 'Fraunces',serif}
+.item p{color:var(--muted);margin:8px 0 14px}
+.item .p{font-weight:600;color:var(--crust)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+table{width:100%;border-collapse:collapse}
+td{padding:12px 0;border-bottom:1px solid var(--line)}td:last-child{text-align:right}
+tr.today td{font-weight:600;color:var(--crust)}
+.addr{margin-top:22px;color:var(--muted)}
+form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;display:grid;gap:14px}
+label{font-weight:600;font-size:15px;display:grid;gap:6px}
+input,select{font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--rye)}
+.ok{display:none;background:#E9F5EC;color:var(--green);padding:12px 14px;border-radius:10px;font-weight:500}
+footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media(max-width:820px){.hero,.split{grid-template-columns:1fr}.menu{grid-template-columns:1fr}nav{display:none}.loaf{max-width:260px}}
+@media(max-width:560px){.w{padding:0 16px}}
+</style>
+</head>
+<body>
+<div class="w">
+<header><a class="logo" href="#">Maison Fournil</a><nav><a href="#pains">Nos pains</a><a href="#horaires">Horaires</a><a href="#commande">Commander</a></nav></header>
+<div class="hero">
+  <div>
+    <span class="status" id="status"><i></i><span>Horaires du jour</span></span>
+    <h1>Du pain au levain, cuit chaque matin à 5 h.</h1>
+    <p>Farines bio du Gâtinais, fermentation lente de 24 heures et viennoiseries au beurre AOP. Réservez ce soir, c’est prêt demain à l’ouverture.</p>
+    <a class="btn" href="#commande">Réserver pour demain</a>
+  </div>
+  <svg class="loaf" viewBox="0 0 400 300" role="img" aria-label="Illustration d’une miche de pain">
+    <ellipse cx="200" cy="270" rx="170" ry="16" fill="#E8DCC8"/>
+    <path d="M40 200c0-90 70-150 160-150s160 60 160 150c0 40-40 62-160 62S40 240 40 200z" fill="#C8682F"/>
+    <path d="M40 200c0-90 70-150 160-150s160 60 160 150c0 40-40 62-160 62S40 240 40 200z" fill="url(#g)"/>
+    <path d="M110 130c40-20 70-22 100-12M130 175c45-26 95-30 140-14M170 95c30-10 60-8 90 6" stroke="#F3C990" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <defs><radialGradient id="g" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#E9A35F" stop-opacity=".7"/><stop offset="1" stop-color="#7E3414" stop-opacity=".6"/></radialGradient></defs>
+  </svg>
+</div>
+</div>
+
+<section id="pains"><div class="w">
+  <h2>Les incontournables</h2>
+  <div class="menu">
+    <div class="item"><h3>Miche de campagne</h3><p>Levain naturel, croûte épaisse, se garde quatre jours.</p><span class="p">4,80 € les 800 g</span></div>
+    <div class="item"><h3>Baguette tradition</h3><p>Farine Label Rouge, pointes croustillantes, cuite toutes les deux heures.</p><span class="p">1,30 €</span></div>
+    <div class="item"><h3>Croissant AOP</h3><p>Beurre Charentes-Poitou, tourage à la main la veille.</p><span class="p">1,40 €</span></div>
+  </div>
+</div></section>
+
+<section id="horaires"><div class="w split">
+  <div>
+    <h2>Horaires</h2>
+    <table id="hours">
+      <tr data-d="2,3,4,5"><td>Mardi au vendredi</td><td>7 h – 19 h 30</td></tr>
+      <tr data-d="6"><td>Samedi</td><td>7 h – 13 h, 15 h – 19 h</td></tr>
+      <tr data-d="0"><td>Dimanche</td><td>7 h – 13 h</td></tr>
+      <tr data-d="1"><td>Lundi</td><td>Fermé</td></tr>
+    </table>
+    <p class="addr">12 rue du Four, 75000 Paris (adresse fictive)<br><a href="https://www.openstreetmap.org/" rel="noopener">Voir sur la carte</a> · <a href="tel:+33100000000">01 00 00 00 00</a></p>
+  </div>
+  <div id="commande">
+    <h2>Commander pour demain</h2>
+    <form id="order">
+      <label>Votre prénom<input name="n" required autocomplete="given-name"></label>
+      <label>Ce que vous voulez<select name="p"><option>1 miche de campagne</option><option>2 baguettes tradition</option><option>6 croissants</option></select></label>
+      <label>Heure de passage<select name="h"><option>Dès l’ouverture</option><option>Avant 9 h</option><option>Avant midi</option></select></label>
+      <button class="btn" type="submit">Réserver ma commande</button>
+      <p class="ok" id="ok" role="status"></p>
+    </form>
+  </div>
+</div></section>
+
+<div class="w"><footer>Site de démonstration réalisé par Richyzzer. Maison Fournil est une boulangerie fictive ; aucune commande n’est transmise.</footer></div>
+
+<script>
+(function(){
+  var now=new Date(),d=now.getDay(),m=now.getHours()*60+now.getMinutes();
+  var slots={0:[[420,780]],1:[],2:[[420,1170]],3:[[420,1170]],4:[[420,1170]],5:[[420,1170]],6:[[420,780],[900,1140]]};
+  var open=slots[d].some(function(s){return m>=s[0]&&m<s[1];});
+  var st=document.getElementById('status');st.classList.toggle('open',open);
+  st.lastElementChild.textContent=open?'Ouvert en ce moment':'Fermé en ce moment';
+  document.querySelectorAll('#hours tr').forEach(function(r){if(r.dataset.d.split(',').indexOf(String(d))>-1)r.classList.add('today');});
+  document.getElementById('order').addEventListener('submit',function(e){e.preventDefault();var f=e.target,ok=document.getElementById('ok');
+    ok.textContent='Merci '+f.n.value+' : '+f.p.value+', '+f.h.value.toLowerCase()+'. (Démo : rien n’a été envoyé.)';ok.style.display='block';});
+})();
+</script>
+</body>
+</html>

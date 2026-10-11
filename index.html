@@ -1,13 +1,275 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Richyzzer — Web Portfolio</title><meta name="description" content="Fast, responsive landing pages and small-business websites. Demo portfolio.">
-<style>:root{--bg:#111;--ink:#f2f2f2;--muted:#9a9a9a;--accent:#7ee787}*{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,sans-serif}.w{max-width:960px;margin:auto;padding:48px 16px}
-h1{font-size:clamp(32px,6vw,52px);line-height:1.1}p{color:var(--muted);margin:14px 0 36px;max-width:620px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-a.card{display:block;padding:24px;border:1px solid #2a2a2a;border-radius:14px;color:var(--ink);text-decoration:none}a.card:hover{border-color:var(--accent)}
-a.card small{color:var(--accent)}</style></head><body><div class="w">
-<h1>Fast, clean websites for small businesses.</h1><p>Static, mobile-first pages that load instantly — no page builder bloat. Three demos below, all fictional businesses, each built from scratch.</p>
-<div class="grid"><a class="card" href="boulangerie/"><small>Local shop · FR</small><h3>Maison Fournil</h3>Artisan bakery: products, hours, pre-orders.</a>
-<a class="card" href="plombier/"><small>Trades · FR</small><h3>Dépann'Eau</h3>Emergency plumber: pricing, process, call CTA.</a>
-<a class="card" href="coach/"><small>Coaching · EN</small><h3>Nora Vale</h3>Career coach: programme, testimonials, booking.</a></div>
-</div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Richyzzer — Websites and automations for small businesses</title>
+<meta name="description" content="Fast static websites, Python automations and bilingual SEO articles for freelancers and small businesses. See live demos and fixed prices.">
+<meta property="og:title" content="Richyzzer — Websites and automations for small businesses">
+<meta property="og:description" content="Live demos, fixed prices, delivery in days. Order on Fiverr.">
+<meta property="og:image" content="/assets/avatar.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F6FB; --surface:#FFFFFF; --ink:#0E1B3D; --ink-2:#4A5675;
+  --cobalt:#2340E8; --cobalt-deep:#1A2FB0; --line:#D3DAE8; --signal:#FFC93C;
+  --display:'Bricolage Grotesque',system-ui,sans-serif; --body:'Instrument Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.brand{display:flex;align-items:center;gap:10px;font:700 20px var(--display);text-decoration:none}
+.brand img{width:34px;height:34px;border-radius:9px}
+.top nav{display:flex;gap:26px;align-items:center}
+.top nav a{text-decoration:none;font-weight:500;color:var(--ink-2)}
+.top nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--cobalt);color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:10px;border:0;cursor:pointer;font-size:16px}
+.btn:hover{background:var(--cobalt-deep)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.top nav a.btn{padding:10px 18px;color:#fff}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center;padding:56px 0 88px}
+.hero h1{font:800 clamp(42px,5.6vw,76px)/.98 var(--display);letter-spacing:-.025em}
+.hero p{font-size:19px;color:var(--ink-2);margin:24px 0 32px;max-width:30em}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:28px;margin-top:40px;color:var(--ink-2);font-size:15px;flex-wrap:wrap}
+.facts b{display:block;color:var(--ink);font:700 22px var(--display)}
+
+/* browser */
+.browser{background:var(--surface);border-radius:14px;box-shadow:0 1px 0 var(--line),0 30px 60px -30px #0E1B3D55;border:1px solid var(--line);overflow:hidden}
+.chrome{display:flex;align-items:center;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line);background:#EEF1F8}
+.chrome i{width:11px;height:11px;border-radius:50%;background:#C9D1E3}
+.tabs{display:flex;gap:4px;margin-left:12px;overflow-x:auto}
+.tab{font:500 13px var(--body);border:0;background:transparent;color:var(--ink-2);padding:6px 12px;border-radius:7px;cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1px var(--line),inset 0 -2px 0 var(--signal)}
+.viewport{position:relative;aspect-ratio:16/10;overflow:hidden;background:#fff}
+.viewport iframe{pointer-events:none;position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0}
+.viewport a.open{position:absolute;right:12px;bottom:12px;background:var(--ink);color:#fff;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;text-decoration:none}
+
+/* sections */
+section{padding:88px 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(32px,3.6vw,48px)/1.05 var(--display);letter-spacing:-.02em;max-width:18em}
+.lede{color:var(--ink-2);margin-top:14px;max-width:38em}
+
+/* work */
+.case{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center;margin-top:64px}
+.case:nth-of-type(even){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.case:nth-of-type(even) .shot{order:2}
+.shot{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff;position:relative;aspect-ratio:16/10}
+.shot iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0;pointer-events:none}
+.shot:hover{border-color:var(--cobalt)}
+.case h3{font:700 30px/1.1 var(--display)}
+.case .kind{color:var(--cobalt);font-weight:600;font-size:15px;margin-bottom:8px}
+.case p{color:var(--ink-2);margin:12px 0 18px}
+.case ul{list-style:none;display:grid;gap:8px;margin-bottom:22px}
+.case li{padding-left:22px;position:relative}
+.case li:before{content:"";position:absolute;left:0;top:.6em;width:10px;height:10px;border-radius:3px;background:var(--signal)}
+.case a.more{font-weight:600;color:var(--cobalt)}
+
+/* pricing table */
+.pricing{margin-top:48px;overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;min-width:720px}
+th,td{text-align:left;padding:18px 22px;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{font:700 15px var(--body);color:var(--ink-2);background:#F8F9FD}
+tbody th{font:700 20px/1.2 var(--display);width:30%}
+tbody th span{display:block;font:400 14px/1.5 var(--body);color:var(--ink-2);margin-top:6px}
+td b{display:block;font:700 26px var(--display)}
+td small{color:var(--ink-2);font-size:14px}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px;counter-reset:s;list-style:none}
+.steps li{counter-increment:s;border-top:3px solid var(--ink);padding-top:18px}
+.steps li:before{content:counter(s);font:800 44px/1 var(--display);color:var(--cobalt);display:block;margin-bottom:12px}
+.steps b{display:block;font:700 19px var(--display);margin-bottom:6px}
+.steps p{color:var(--ink-2);font-size:16px}
+
+/* faq */
+.faq{margin-top:40px;max-width:820px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{font:600 19px var(--display);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:26px;line-height:1;color:var(--cobalt);transition:transform .2s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{color:var(--ink-2);margin-top:10px;max-width:40em}
+
+/* cta */
+.cta{background:var(--cobalt);color:#fff;border-radius:22px;padding:64px 56px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;margin:88px 0}
+.cta h2{color:#fff}
+.cta p{color:#D9E0FF;margin-top:10px}
+.cta .btn{background:var(--signal);color:var(--ink)}
+.cta .btn:hover{background:#fff}
+footer{padding:0 0 48px;color:var(--ink-2);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:900px){
+  .hero,.case{grid-template-columns:1fr;gap:32px}
+  .case:nth-of-type(even){grid-template-columns:1fr}.case:nth-of-type(even) .shot{order:0}
+  .steps{grid-template-columns:1fr 1fr}
+  .top nav a:not(.btn){display:none}
+  .cta{padding:40px 28px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .steps{grid-template-columns:1fr}
+  .hero{padding-top:28px}
+}
+@media (max-width:640px){
+  table{min-width:0}thead{display:none}
+  table,tbody,tr,th,td{display:block;width:100%}
+  tbody tr{border-bottom:1px solid var(--line);padding:6px 0}
+  tbody th{border:0;padding-bottom:4px}
+  td{border:0;padding:10px 22px}
+  td:before{display:block;font:600 13px var(--body);color:var(--cobalt)}
+  td:nth-of-type(1):before{content:"Basic"}td:nth-of-type(2):before{content:"Standard"}td:nth-of-type(3):before{content:"Premium"}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}summary:after{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/assets/favicon.svg" alt="">Richyzzer</a>
+    <nav><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a class="btn" href="https://www.fiverr.com/richyzzer" rel="noopener">Order on Fiverr</a></nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Websites that load before your client blinks.</h1>
+      <p>I build fast static websites, small automations and researched articles for freelancers and small businesses. Fixed prices, delivery in days, and you own every line of code.</p>
+      <div class="ctas"><a class="btn" href="#pricing">See prices</a><a class="btn ghost" href="#work">Browse the demos</a></div>
+      <div class="facts"><div><b>3 days</b>for a landing page</div><div><b>EN + FR</b>copy included on request</div><div><b>100%</b>code ownership</div></div>
+    </div>
+    <div class="browser" aria-label="Live preview of demo websites">
+      <div class="chrome"><i></i><i></i><i></i>
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" aria-selected="true" data-src="/boulangerie/">Bakery</button>
+          <button class="tab" role="tab" aria-selected="false" data-src="/plombier/">Plumber</button>
+          <button class="tab" role="tab" aria-selected="false" data-src="/coach/">Coach</button>
+        </div>
+      </div>
+      <div class="viewport" id="hero-view">
+        <iframe src="/boulangerie/" title="Demo website preview" loading="eager" tabindex="-1"></iframe>
+        <a class="open" href="/boulangerie/" target="_blank" rel="noopener">Open full site</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="work"><div class="wrap">
+  <h2>Three businesses, three different jobs for the website.</h2>
+  <p class="lede">Each demo is a fictional business built from scratch to show how the page should change with what the customer needs to do next.</p>
+
+  <article class="case">
+    <a class="shot" href="/boulangerie/" aria-label="Open the bakery demo"><iframe src="/boulangerie/" title="Bakery demo" loading="lazy" tabindex="-1"></iframe></a>
+    <div>
+      <div class="kind">Local shop, French</div>
+      <h3>Maison Fournil</h3>
+      <p>A neighbourhood bakery whose customers mostly want two things: today’s opening hours and a way to reserve bread for tomorrow.</p>
+      <ul><li>Hours that show whether the shop is open right now</li><li>Pre-order form for the next morning</li><li>Map link and click-to-call on phones</li></ul>
+      <a class="more" href="/boulangerie/">Open the demo</a>
+    </div>
+  </article>
+
+  <article class="case">
+    <a class="shot" href="/plombier/" aria-label="Open the plumber demo"><iframe src="/plombier/" title="Plumber demo" loading="lazy" tabindex="-1"></iframe></a>
+    <div>
+      <div class="kind">Trades, French</div>
+      <h3>Dépann’Eau</h3>
+      <p>An emergency plumber. Visitors arrive stressed and on their phone, so the call button never leaves the screen and prices are stated up front.</p>
+      <ul><li>Sticky call button on mobile</li><li>Starting prices for the six most common jobs</li><li>Service-area check by postcode</li></ul>
+      <a class="more" href="/plombier/">Open the demo</a>
+    </div>
+  </article>
+
+  <article class="case">
+    <a class="shot" href="/coach/" aria-label="Open the coach demo"><iframe src="/coach/" title="Coach demo" loading="lazy" tabindex="-1"></iframe></a>
+    <div>
+      <div class="kind">Coaching, English</div>
+      <h3>Nora Vale</h3>
+      <p>A career coach selling one four-week programme. The page walks a visitor from the problem to the booking call without a single menu.</p>
+      <ul><li>Week-by-week programme</li><li>Price and inclusions in one block</li><li>Booking form with a choice of time slots</li></ul>
+      <a class="more" href="/coach/">Open the demo</a>
+    </div>
+  </article>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <h2>Fixed prices, ordered and paid through Fiverr.</h2>
+  <p class="lede">Every package includes the source files and revisions. Not sure which one fits? Send a message on Fiverr before ordering.</p>
+  <div class="pricing">
+    <table>
+      <thead><tr><th scope="col">Service</th><th scope="col">Basic</th><th scope="col">Standard</th><th scope="col">Premium</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Website or landing page<span>Static, responsive, deployed for you</span></th>
+          <td><b>$45</b>One page with contact form<br><small>3 days, 1 revision</small></td>
+          <td><b>$110</b>Up to 5 pages with basic SEO<br><small>5 days, 2 revisions</small></td>
+          <td><b>$230</b>5 pages, bilingual, Search Console set up<br><small>7 days, 3 revisions</small></td></tr>
+        <tr><th scope="row">Automation<span>Python or Google Sheets</span></th>
+          <td><b>$35</b>One script with a plain-language guide<br><small>2 days</small></td>
+          <td><b>$90</b>Scheduled run with error handling<br><small>4 days</small></td>
+          <td><b>$180</b>Small tool with a simple interface<br><small>7 days</small></td></tr>
+        <tr><th scope="row">SEO articles<span>English or French, sources checked</span></th>
+          <td><b>$25</b>One article, 800 words<br><small>3 days</small></td>
+          <td><b>$65</b>Three articles<br><small>5 days</small></td>
+          <td><b>$160</b>Eight articles and a keyword plan<br><small>10 days</small></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<section id="process"><div class="wrap">
+  <h2>How an order runs.</h2>
+  <ol class="steps">
+    <li><b>Message</b><p>You describe the job on Fiverr. I reply with the package that fits and anything I need from you.</p></li>
+    <li><b>Order</b><p>You order and send your texts, logo or files. Payment stays with Fiverr until you accept the delivery.</p></li>
+    <li><b>Preview</b><p>You get a live preview link to review on your own phone and computer.</p></li>
+    <li><b>Delivery</b><p>After your revisions, you receive the files, the deployment, and a short guide to edit them.</p></li>
+  </ol>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Questions buyers ask first.</h2>
+  <div class="faq">
+    <details><summary>Can you write the texts for me?</summary><p>Yes, in English or French. Mention it in your first message so it is included in the quote.</p></details>
+    <details><summary>Do you use WordPress?</summary><p>No. Static sites load faster, cost less to host, and have nothing to update or patch. If you need to edit texts often, I can set up a simple way to do it.</p></details>
+    <details><summary>Where will my site be hosted?</summary><p>On your own hosting if you have one, or on a free static host such as Vercel or Netlify, set up on your account so you stay in control.</p></details>
+    <details><summary>Do I own the code?</summary><p>Yes, entirely. You receive all source files with the delivery.</p></details>
+    <details><summary>What can’t you automate?</summary><p>Anything that breaks a website’s terms of use, sends unsolicited messages, or runs fake accounts.</p></details>
+  </div>
+</div></section>
+
+<div class="wrap">
+  <div class="cta">
+    <div><h2>Have a page in mind?</h2><p>Send a short description on Fiverr and get a reply with a fixed price.</p></div>
+    <a class="btn" href="https://www.fiverr.com/richyzzer" rel="noopener">Message me on Fiverr</a>
+  </div>
+  <footer><span>© 2026 Richyzzer</span><span>All demo businesses are fictional.</span></footer>
+</div>
+
+<script>
+(function(){
+  function fit(box){var f=box.querySelector('iframe');if(f){f.style.transform='scale('+(box.clientWidth/1280)+')';}}
+  var boxes=document.querySelectorAll('.viewport,.shot');
+  function all(){boxes.forEach(fit);}
+  window.addEventListener('resize',all);all();
+  var view=document.getElementById('hero-view'),frame=view.querySelector('iframe'),open=view.querySelector('a.open');
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(o){o.setAttribute('aria-selected',o===t?'true':'false');});
+    frame.src=t.dataset.src;open.href=t.dataset.src;
+  });});
+})();
+</script>
+</body>
+</html>

@@ -1,27 +1,97 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dépann'Eau 24/7 — Plombier d'urgence</title><meta name="description" content="Démo de landing page pour un artisan plombier : urgence, devis, tarifs transparents et zone d'intervention.">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dépann’Eau — Plombier d’urgence 7 j/7</title>
+<meta name="description" content="Plombier d’urgence : prix annoncés avant déplacement, intervention en moins d’une heure, zone d’intervention vérifiable par code postal.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FFB703'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0d1b2a;--ink:#e8f1f8;--accent:#ffb703;--blue:#1b4965;--muted:#9fb3c8}
-*{box-sizing:border-box;margin:0}body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,sans-serif}
-.w{max-width:1040px;margin:auto;padding:0 16px}.bar{background:var(--accent);color:#111;text-align:center;padding:10px;font-weight:600}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}.logo{font:700 22px 'Space Grotesk'}
-.call{background:var(--accent);color:#111;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none}
-h1{font:700 clamp(34px,6vw,60px)/1.05 'Space Grotesk';margin:48px 0 18px}p.lead{color:var(--muted);font-size:19px;max-width:620px}
-.stats{display:flex;gap:28px;flex-wrap:wrap;margin:32px 0 56px}.stats div b{display:block;font:700 34px 'Space Grotesk';color:var(--accent)}
-h2{font:700 30px 'Space Grotesk';margin-bottom:20px}section{padding:40px 0}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{background:var(--blue);padding:22px;border-radius:14px}
-.card span{float:right;color:var(--accent);font-weight:700}.steps{counter-reset:s;list-style:none;padding:0}
-.steps li{counter-increment:s;padding:14px 0 14px 52px;position:relative;border-bottom:1px solid #ffffff1a}
-.steps li:before{content:counter(s);position:absolute;left:0;top:10px;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#111;display:grid;place-items:center;font-weight:700}
+:root{--night:#0D1B2A;--deep:#13283D;--panel:#1B3A55;--text:#E8F1F8;--muted:#9FB3C8;--amber:#FFB703;--line:#ffffff1f}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--night);color:var(--text);font:17px/1.6 Inter,sans-serif;padding-bottom:84px}
+a{color:inherit}:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.w{max-width:1080px;margin:auto;padding:0 24px}
+.bar{background:var(--amber);color:#111;text-align:center;padding:9px 16px;font-weight:600;font-size:15px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font:800 24px Archivo,sans-serif;text-decoration:none}
+.call{background:var(--amber);color:#111;padding:12px 20px;border-radius:10px;font-weight:700;text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.call svg{width:18px;height:18px}
+.hero{padding:40px 0 56px;max-width:760px}
+h1{font:800 clamp(38px,6vw,64px)/1.02 Archivo,sans-serif;letter-spacing:-.02em;margin-bottom:20px}
+.lead{color:var(--muted);font-size:19px;max-width:36em}
+.proof{display:flex;gap:36px;margin-top:36px;flex-wrap:wrap}
+.proof b{display:block;font:800 32px Archivo,sans-serif;color:var(--amber)}
+.proof span{color:var(--muted);font-size:15px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font:700 32px Archivo,sans-serif;margin-bottom:24px}
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.price{display:flex;justify-content:space-between;gap:16px;background:var(--deep);border:1px solid var(--line);padding:18px 20px;border-radius:12px}
+.price b{color:var(--amber);white-space:nowrap}
+.note{color:var(--muted);font-size:15px;margin-top:14px}
+.zone{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+form{display:flex;gap:10px;flex-wrap:wrap}
+input{font:inherit;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--deep);color:var(--text);width:180px}
+button{font:inherit;font-weight:700;background:var(--text);color:var(--night);border:0;border-radius:10px;padding:12px 18px;cursor:pointer}
+#zres{margin-top:14px;font-weight:500;min-height:1.6em}
+.steps{list-style:none;counter-reset:s}
+.steps li{counter-increment:s;padding:14px 0 14px 54px;position:relative;border-bottom:1px solid var(--line)}
+.steps li:before{content:counter(s);position:absolute;left:0;top:10px;width:38px;height:38px;border-radius:50%;background:var(--amber);color:#111;display:grid;place-items:center;font-weight:800}
+.dock{position:fixed;left:0;right:0;bottom:0;background:var(--deep);border-top:1px solid var(--line);padding:12px 16px;display:flex;justify-content:center}
+.dock .call{width:100%;max-width:520px;justify-content:center;font-size:18px}
 footer{padding:32px 0;color:var(--muted);font-size:14px}
-@media(max-width:700px){.grid{grid-template-columns:1fr}}
-</style></head><body><div class="bar">Intervention en moins de 60 minutes · 7 jours sur 7</div>
-<div class="w"><header><span class="logo">Dépann'Eau</span><a class="call" href="#">📞 Appeler</a></header>
-<h1>Fuite, WC bouché, chauffe-eau en panne ? On arrive.</h1><p class="lead">Devis annoncé au téléphone avant de se déplacer. Pas de frais cachés, pas de mauvaise surprise sur la facture.</p>
-<div class="stats"><div><b>&lt; 60 min</b>délai moyen</div><div><b>4,9/5</b>note clients (démo)</div><div><b>0 €</b>de devis</div></div>
-<section><h2>Tarifs indicatifs</h2><div class="grid">
-<div class="card">Débouchage WC / évier<span>dès 89 €</span></div><div class="card">Recherche de fuite<span>dès 120 €</span></div>
-<div class="card">Remplacement de mitigeur<span>dès 95 € + pièce</span></div><div class="card">Dépannage chauffe-eau<span>dès 110 €</span></div></div></section>
-<section><h2>Comment ça se passe</h2><ol class="steps"><li>Vous appelez et décrivez le problème.</li><li>On vous annonce un prix ferme et une heure d'arrivée.</li><li>On répare, vous payez sur place, facture par e-mail.</li></ol></section>
-<footer>Démo réalisée par Richyzzer — entreprise fictive, prix et avis donnés à titre d'exemple.</footer></div></body></html>
+@media(max-width:760px){.prices,.zone{grid-template-columns:1fr}header .call{display:none}}
+@media(min-width:761px){.dock{display:none}body{padding-bottom:0}}
+@media(max-width:560px){.w{padding:0 16px}}
+</style>
+</head>
+<body>
+<div class="bar">Intervention en moins de 60 minutes, 7 jours sur 7</div>
+<div class="w">
+<header><a class="logo" href="#">Dépann’Eau</a>
+<a class="call" href="tel:+33100000000"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>01 00 00 00 00</a></header>
+<div class="hero">
+  <h1>Fuite, WC bouché, chauffe-eau en panne ? On arrive.</h1>
+  <p class="lead">Le prix est annoncé au téléphone avant le déplacement. Pas de frais cachés, et la facture correspond au devis.</p>
+  <div class="proof"><div><b>&lt; 60 min</b><span>délai moyen d’arrivée</span></div><div><b>0 €</b><span>pour le devis</span></div><div><b>7 j/7</b><span>y compris jours fériés</span></div></div>
+</div>
+</div>
+
+<section><div class="w">
+  <h2>Tarifs de départ</h2>
+  <div class="prices">
+    <div class="price"><span>Débouchage WC ou évier</span><b>dès 89 €</b></div>
+    <div class="price"><span>Recherche de fuite</span><b>dès 120 €</b></div>
+    <div class="price"><span>Remplacement de mitigeur</span><b>dès 95 € + pièce</b></div>
+    <div class="price"><span>Dépannage chauffe-eau</span><b>dès 110 €</b></div>
+    <div class="price"><span>Remplacement de chasse d’eau</span><b>dès 85 € + pièce</b></div>
+    <div class="price"><span>Réparation de canalisation</span><b>dès 140 €</b></div>
+  </div>
+  <p class="note">Majoration de nuit (20 h – 8 h) et jours fériés : +30 %, annoncée avant le déplacement.</p>
+</div></section>
+
+<section><div class="w zone">
+  <div>
+    <h2>Vous êtes dans notre zone ?</h2>
+    <form id="zone"><label for="cp" class="sr">Code postal</label><input id="cp" inputmode="numeric" maxlength="5" placeholder="Code postal" required><button type="submit">Vérifier</button></form>
+    <p id="zres" role="status"></p>
+  </div>
+  <div>
+    <h2>Comment ça se passe</h2>
+    <ol class="steps"><li>Vous appelez et décrivez le problème.</li><li>On vous annonce un prix ferme et une heure d’arrivée.</li><li>On répare, vous payez sur place, la facture arrive par e-mail.</li></ol>
+  </div>
+</div></section>
+
+<div class="w"><footer>Site de démonstration réalisé par Richyzzer. Dépann’Eau est une entreprise fictive ; numéro et tarifs donnés à titre d’exemple.</footer></div>
+<div class="dock"><a class="call" href="tel:+33100000000">Appeler maintenant</a></div>
+<style>.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}</style>
+<script>
+document.getElementById('zone').addEventListener('submit',function(e){e.preventDefault();
+  var v=document.getElementById('cp').value.trim(),r=document.getElementById('zres');
+  if(!/^\d{5}$/.test(v)){r.textContent='Entrez un code postal à 5 chiffres.';return;}
+  var ok=/^(75|92|93|94)/.test(v);
+  r.textContent=ok?'Oui, nous intervenons au '+v+'. Appelez-nous pour l’heure d’arrivée.':'Le '+v+' est hors de notre zone (Paris et petite couronne).';});
+</script>
+</body>
+</html>
