@@ -1,0 +1,28 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maison Fournil — Boulangerie artisanale</title><meta name="description" content="Démo de site vitrine pour une boulangerie artisanale : horaires, spécialités, commande et accès.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf6ee;--ink:#2b1d12;--accent:#b5562b;--muted:#7a6656;--card:#fff}
+*{box-sizing:border-box;margin:0}body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,sans-serif}
+.w{max-width:1040px;margin:auto;padding:0 16px}header{padding:20px 0;display:flex;justify-content:space-between;align-items:center}
+.logo{font:700 22px Fraunces,serif}nav a{color:var(--ink);margin-left:18px;text-decoration:none;font-weight:600}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:48px 0}
+h1{font:700 clamp(36px,6vw,64px)/1.05 Fraunces,serif}h1 em{color:var(--accent);font-style:normal}
+.hero p{color:var(--muted);margin:18px 0 26px;font-size:18px}.btn{display:inline-block;background:var(--accent);color:#fff;padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:600}
+.art{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 35%,#e9b77a,#b5562b 60%,#6e2f12);box-shadow:0 30px 60px #b5562b33}
+h2{font:700 34px Fraunces,serif;margin-bottom:24px}section{padding:56px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--card);padding:24px;border-radius:18px}
+.card b{display:block;font:700 20px Fraunces,serif}.price{color:var(--accent);font-weight:600}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:18px;overflow:hidden}td{padding:14px 20px;border-bottom:1px solid #eee}
+footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid #e6dccd}
+@media(max-width:760px){.hero,.grid{grid-template-columns:1fr}nav{display:none}.art{max-width:260px}}
+</style></head><body>
+<div class="w"><header><span class="logo">Maison Fournil</span><nav><a href="#pains">Nos pains</a><a href="#horaires">Horaires</a><a href="#commande">Commander</a></nav></header>
+<div class="hero"><div><h1>Du pain au levain, <em>cuit chaque matin</em> à 5 h.</h1><p>Farines bio du Gâtinais, fermentation lente de 24 heures, et des viennoiseries au beurre AOP.</p><a class="btn" href="#commande">Réserver ma commande</a></div><div class="art" role="img" aria-label="Illustration d'une miche"></div></div>
+<section id="pains"><h2>Les incontournables</h2><div class="grid">
+<div class="card"><b>Miche de campagne</b><p>Levain naturel, croûte épaisse, se garde 4 jours.</p><span class="price">4,80 € · 800 g</span></div>
+<div class="card"><b>Baguette tradition</b><p>Farine Label Rouge, pointes croustillantes.</p><span class="price">1,30 €</span></div>
+<div class="card"><b>Croissant AOP</b><p>Beurre Charentes-Poitou, 27 couches feuilletées.</p><span class="price">1,40 €</span></div></div></section>
+<section id="horaires"><h2>Horaires</h2><table><tr><td>Mardi – Vendredi</td><td>7 h – 19 h 30</td></tr><tr><td>Samedi</td><td>7 h – 13 h · 15 h – 19 h</td></tr><tr><td>Dimanche</td><td>7 h – 13 h</td></tr><tr><td>Lundi</td><td>Fermé</td></tr></table></section>
+<section id="commande"><h2>Commander pour le lendemain</h2><p>Appelez avant 18 h ou passez en boutique : votre commande vous attend dès l'ouverture.</p><br><a class="btn" href="#">Appeler la boutique</a></section>
+<footer>Démo réalisée par Richyzzer — entreprise fictive, aucun lien avec un commerce réel.</footer></div></body></html>
